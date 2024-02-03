@@ -1,9 +1,21 @@
-import React from 'react';
+import React from "react";
+import Movie from '../components/Movie'
+import { dummy } from "../moveDummy";
 
 const Movies = () => {
   return (
     <div>
-      <h1>Movies</h1>
+      <div className="app-container">
+        {dummy.results.map((item) => {
+          return (
+            <Movie
+              title={item.title}
+              poster_path={item.poster_path}
+              vote_average={item.vote_average}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
